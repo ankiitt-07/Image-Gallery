@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    height: 100% ;
+    max-width: 1200px;
+    margin: 0 auto;   /*to make container in center we use 0 auto and left-right margin will be equal by using this */
+    padding: 20px;
+}
+.container h1{
+    margin: 20px 0;
+    /* first value top n bottom and second value right n left  */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card{
+    width: 32%;
+     position: relative;
+     margin-bottom: 20px; 
+     border-radius: 10px;
+     overflow: hidden;
+}
+
+.card img{
+    /* relative to card it will chnge if card is round it will be round and so on. */
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    /* object-fit: cover; */
+
+
+}
+.card:hover{
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.2s;
+
+}
+.card:hover img{
+    filter: grayscale(0%);
+}
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0)100%);
+    transition: 0.2%;  
+
+}
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+}
